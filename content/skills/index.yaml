@@ -1,0 +1,67 @@
+groups:
+  - name:
+      en: Frontend
+      ar: الواجهات الأمامية
+    emphasis: primary
+    items:
+      - React
+      - TypeScript
+      - JavaScript
+      - HTML5
+      - CSS3
+      - MUI
+      - Ant Design
+      - JSS
+      - Mapbox
+  - name:
+      en: Mobile
+      ar: تطبيقات الموبايل
+    emphasis: primary
+    items:
+      - React Native
+  - name:
+      en: Backend
+      ar: الخوادم
+    emphasis: primary
+    items:
+      - Node.js
+      - NestJS
+      - REST APIs
+      - GraphQL
+      - Apollo
+      - Prisma
+  - name:
+      en: Databases
+      ar: قواعد البيانات
+    emphasis: primary
+    items:
+      - PostgreSQL
+      - MySQL
+      - SQL
+  - name:
+      en: AI
+      ar: الذكاء الاصطناعي
+    emphasis: primary
+    items:
+      - AI agents
+      - AI engineering
+  - name:
+      en: Cloud
+      ar: الحوسبة السحابية
+    emphasis: primary
+    items:
+      - DigitalOcean
+      - AWS
+  - name:
+      en: Earlier experience
+      ar: خبرات سابقة
+    emphasis: secondary
+    items:
+      - C#
+      - ASP.NET MVC
+      - LINQ
+      - jQuery
+      - Bootstrap
+      - Magento
+      - OpenCart
+      - Fabric XM

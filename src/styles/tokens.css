@@ -1,0 +1,65 @@
+/*
+ * "Ink & Volt" design tokens. Dark only.
+ * Every text pair below was contrast-checked against WCAG AA (see PLAN.md §5.2).
+ */
+:root {
+  /* Color */
+  --bg: #0a0e15;
+  --surface: #10151f;
+  --surface-2: #161d2a;
+  --border: #232c3d;
+  --border-input: #5b6780;
+  --text: #ecf0f6;
+  --text-muted: #a3aec2;
+  --text-subtle: #7a869e;
+  --accent: #c3f53c;
+  --accent-hover: #d4ff5c;
+  --on-accent: #0a0e15;
+  --accent-2: #4fd1e0;
+  --danger: #f87171;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 150ms;
+  --dur-base: 250ms;
+  --dur-slow: 600ms;
+
+  /* Typography: English */
+  --font-display-stack: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-body-stack: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono-stack: var(--font-jetbrains-mono), ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --leading-display: 0.95;
+  --leading-h2: 1.05;
+  --leading-h3: 1.2;
+  --body-size: 1.0625rem;
+  --leading-body: 1.65;
+  --leading-small: 1.5;
+  --label-size: 0.75rem;
+
+  --header-height: 4rem;
+}
+
+/*
+ * Typography: Arabic. Taller line-heights, one step larger body, no tracking.
+ *
+ * Latin families come first so tech names (React, NestJS) match the English
+ * site; Arabic letters fall through to Readex Pro (one variable file for every
+ * weight). The Latin families are named directly instead of via var(--font-…):
+ * next/font's variables include a size-adjusted local fallback (Arial) that
+ * covers Arabic glyphs and would stop the browser from ever reaching Readex Pro.
+ */
+:root:lang(ar) {
+  --font-display-stack: "Space Grotesk", "Readex Pro", var(--font-readex-pro), system-ui, sans-serif;
+  --font-body-stack: "Inter", "Readex Pro", var(--font-readex-pro), system-ui, sans-serif;
+  --font-mono-stack: "JetBrains Mono", "Readex Pro", var(--font-readex-pro), ui-monospace, monospace;
+
+  --leading-display: 1.25;
+  --leading-h2: 1.35;
+  --leading-h3: 1.5;
+  --body-size: 1.125rem;
+  --leading-body: 1.85;
+  --leading-small: 1.7;
+  --label-size: 0.875rem;
+}

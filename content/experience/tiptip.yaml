@@ -1,0 +1,20 @@
+company: TipTip
+role:
+  en: Senior Full-Stack Engineer
+  ar: مهندس برمجيات Full-Stack أول
+employmentType: full-time
+location:
+  en: Dubai, UAE
+  ar: دبي، الإمارات
+startDate: 2025-11-01
+highlights: []
+tech:
+  - React
+  - React Native
+  - Node.js
+  - NestJS
+  - Prisma
+  - PostgreSQL
+  - SQL
+  - DigitalOcean
+  - AI agents

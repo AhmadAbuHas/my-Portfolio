@@ -1,0 +1,136 @@
+{
+  "common": {
+    "skipToContent": "Skip to content",
+    "present": "Present",
+    "current": "Current",
+    "backToTop": "Back to top",
+    "builtWith": "Built with Next.js & Keystatic",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "menu": "Menu",
+    "primaryNav": "Primary",
+    "home": "Home",
+    "opensInNewTab": "(opens in a new tab)",
+    "languageSwitch": "Change language to {language}"
+  },
+  "nav": {
+    "projects": "Work",
+    "apps": "Apps",
+    "experience": "Experience",
+    "skills": "Skills",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "available": "Available for opportunities",
+    "viewWork": "View my work",
+    "viewExperience": "See my experience",
+    "downloadCv": "Download CV",
+    "getInTouch": "Get in touch",
+    "statsLabel": "At a glance",
+    "yearsLabel": "{count, plural, one {year of experience} other {years of experience}}",
+    "companiesLabel": "{count, plural, one {company} other {companies}}",
+    "focus": "Web · Mobile · AI",
+    "focusLabel": "what I build"
+  },
+  "sections": {
+    "projects": {
+      "eyebrow": "Work",
+      "title": "Selected projects",
+      "viewAll": "View all projects"
+    },
+    "apps": {
+      "eyebrow": "Apps",
+      "title": "Apps I've shipped",
+      "viewAll": "View all apps"
+    },
+    "experience": {
+      "eyebrow": "Experience",
+      "title": "Where I've worked",
+      "showEarlier": "{count, plural, one {Show 1 earlier role} other {Show {n} earlier roles}}",
+      "hideEarlier": "Hide earlier roles"
+    },
+    "skills": {
+      "eyebrow": "Skills",
+      "title": "What I work with"
+    },
+    "about": {
+      "eyebrow": "About",
+      "title": "A bit about me",
+      "education": "Education",
+      "strengths": "Strengths",
+      "basedIn": "Based in"
+    },
+    "contact": {
+      "eyebrow": "Contact",
+      "copyEmail": "Copy email address",
+      "copied": "Email copied to clipboard",
+      "sendEmail": "Send an email",
+      "elsewhere": "Find me elsewhere",
+      "phone": "Phone"
+    }
+  },
+  "experience": {
+    "employment": {
+      "full-time": "Full-time",
+      "part-time": "Part-time",
+      "contract": "Contract",
+      "freelance": "Freelance",
+      "internship": "Internship"
+    }
+  },
+  "duration": {
+    "years": "{count, plural, one {1 yr} other {{n} yrs}}",
+    "months": "{count, plural, one {1 mo} other {{n} mos}}",
+    "join": "{years} {months}"
+  },
+  "projects": {
+    "title": "Projects",
+    "description": "Selected projects by {name}.",
+    "role": "Role",
+    "client": "Client",
+    "timeline": "Timeline",
+    "stack": "Tech stack",
+    "liveSite": "Live site",
+    "sourceCode": "Source code",
+    "back": "All projects",
+    "caseStudy": "Case study",
+    "gallery": "Gallery",
+    "viewProject": "View project",
+    "noCover": "No cover image"
+  },
+  "apps": {
+    "title": "Apps",
+    "description": "Apps built and shipped by {name}.",
+    "platformsLabel": "Platforms",
+    "statusLabel": "Status",
+    "platforms": {
+      "ios": "iOS",
+      "android": "Android",
+      "web": "Web",
+      "desktop": "Desktop"
+    },
+    "status": {
+      "live": "Live",
+      "beta": "Beta",
+      "in-development": "In development",
+      "archived": "Archived"
+    },
+    "appStore": "App Store",
+    "googlePlay": "Google Play",
+    "openWebApp": "Open web app",
+    "getTheApp": "Get the app",
+    "screenshots": "Screenshots",
+    "details": "Details",
+    "stack": "Tech stack",
+    "back": "All apps",
+    "viewApp": "View app",
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "The page you're looking for doesn't exist or has moved.",
+    "back": "Back to home"
+  }
+}

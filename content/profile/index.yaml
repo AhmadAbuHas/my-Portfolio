@@ -1,0 +1,39 @@
+name:
+  en: Ahmad Abu Hasan
+  ar: أحمد أبو حسن
+headline:
+  en: Senior Full-Stack Engineer
+  ar: مهندس برمجيات Full-Stack أول
+headlineAccent:
+  en: Full-Stack
+  ar: Full-Stack
+valueProp:
+  en: I build fast, reliable web and mobile products, from React interfaces to NestJS APIs and AI agents.
+  ar: أبني منتجات ويب وموبايل سريعة وموثوقة، من واجهات React إلى خوادم NestJS ووكلاء الذكاء الاصطناعي.
+location:
+  en: Ramallah, Palestine
+  ar: رام الله، فلسطين
+openToWork: true
+careerStart: 2020-01-01
+portrait:
+  discriminant: false
+email: ahmad.csx@gmail.com
+phone: '+970 59 805 8670'
+showPhone: false
+socials:
+  - platform: linkedin
+    url: https://www.linkedin.com/in/ahmad-abu-hasan/
+education:
+  - school:
+      en: An-Najah National University
+      ar: جامعة النجاح الوطنية
+    degree:
+      en: BSc in Computer Science
+      ar: بكالوريوس علم الحاسوب
+    startYear: 2015
+    endYear: 2019
+softSkills:
+  - en: Self-driven learner
+    ar: التعلّم الذاتي المستمر
+  - en: Clear communication
+    ar: التواصل الواضح والفعّال

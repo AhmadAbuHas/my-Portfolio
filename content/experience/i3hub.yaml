@@ -1,0 +1,20 @@
+company: I3Hub
+role:
+  en: Front-End Developer
+  ar: مطوّر واجهات أمامية
+employmentType: full-time
+location:
+  en: Ramallah
+  ar: رام الله
+startDate: 2021-09-01
+endDate: 2023-02-01
+highlights: []
+tech:
+  - React
+  - TypeScript
+  - MUI
+  - JSS
+  - GraphQL
+  - Apollo
+  - HTML5
+  - CSS3

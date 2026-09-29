@@ -1,0 +1,136 @@
+{
+  "common": {
+    "skipToContent": "تخطَّ إلى المحتوى",
+    "present": "حتى الآن",
+    "current": "حالياً",
+    "backToTop": "العودة إلى الأعلى",
+    "builtWith": "بُني باستخدام Next.js وKeystatic",
+    "openMenu": "فتح القائمة",
+    "closeMenu": "إغلاق القائمة",
+    "menu": "القائمة",
+    "primaryNav": "التنقل الرئيسي",
+    "home": "الرئيسية",
+    "opensInNewTab": "(يفتح في علامة تبويب جديدة)",
+    "languageSwitch": "تغيير اللغة إلى {language}"
+  },
+  "nav": {
+    "projects": "أعمالي",
+    "apps": "التطبيقات",
+    "experience": "الخبرات",
+    "skills": "المهارات",
+    "about": "نبذة",
+    "contact": "تواصل"
+  },
+  "hero": {
+    "available": "متاح لفرص جديدة",
+    "viewWork": "استعرض أعمالي",
+    "viewExperience": "استعرض خبراتي",
+    "downloadCv": "تحميل السيرة الذاتية",
+    "getInTouch": "تواصل معي",
+    "statsLabel": "لمحة سريعة",
+    "yearsLabel": "{count, plural, one {سنة خبرة} two {سنتا خبرة} few {سنوات خبرة} many {سنة خبرة} other {سنة خبرة}}",
+    "companiesLabel": "{count, plural, one {شركة} two {شركتان} few {شركات} many {شركة} other {شركة}}",
+    "focus": "ويب · موبايل · ذكاء اصطناعي",
+    "focusLabel": "ما أبنيه"
+  },
+  "sections": {
+    "projects": {
+      "eyebrow": "أعمالي",
+      "title": "مشاريع مختارة",
+      "viewAll": "عرض كل المشاريع"
+    },
+    "apps": {
+      "eyebrow": "التطبيقات",
+      "title": "تطبيقات أطلقتها",
+      "viewAll": "عرض كل التطبيقات"
+    },
+    "experience": {
+      "eyebrow": "الخبرات",
+      "title": "مسيرتي المهنية",
+      "showEarlier": "{count, plural, one {عرض خبرة سابقة واحدة} two {عرض خبرتين سابقتين} few {عرض {n} خبرات سابقة} many {عرض {n} خبرة سابقة} other {عرض {n} خبرة سابقة}}",
+      "hideEarlier": "إخفاء الخبرات السابقة"
+    },
+    "skills": {
+      "eyebrow": "المهارات",
+      "title": "التقنيات التي أعمل بها"
+    },
+    "about": {
+      "eyebrow": "نبذة",
+      "title": "من أنا",
+      "education": "التعليم",
+      "strengths": "نقاط القوة",
+      "basedIn": "مقيم في"
+    },
+    "contact": {
+      "eyebrow": "تواصل",
+      "copyEmail": "نسخ البريد الإلكتروني",
+      "copied": "تم نسخ البريد الإلكتروني",
+      "sendEmail": "إرسال بريد إلكتروني",
+      "elsewhere": "تجدني أيضاً على",
+      "phone": "الهاتف"
+    }
+  },
+  "experience": {
+    "employment": {
+      "full-time": "دوام كامل",
+      "part-time": "دوام جزئي",
+      "contract": "عقد",
+      "freelance": "عمل حر",
+      "internship": "تدريب"
+    }
+  },
+  "duration": {
+    "years": "{count, plural, one {سنة} two {سنتان} few {{n} سنوات} many {{n} سنة} other {{n} سنة}}",
+    "months": "{count, plural, one {شهر} two {شهران} few {{n} أشهر} many {{n} شهراً} other {{n} شهر}}",
+    "join": "{years} و{months}"
+  },
+  "projects": {
+    "title": "المشاريع",
+    "description": "مشاريع مختارة من أعمال {name}.",
+    "role": "دوري",
+    "client": "العميل",
+    "timeline": "المدة",
+    "stack": "التقنيات",
+    "liveSite": "الموقع المباشر",
+    "sourceCode": "الشيفرة المصدرية",
+    "back": "كل المشاريع",
+    "caseStudy": "دراسة الحالة",
+    "gallery": "معرض الصور",
+    "viewProject": "عرض المشروع",
+    "noCover": "لا توجد صورة غلاف"
+  },
+  "apps": {
+    "title": "التطبيقات",
+    "description": "تطبيقات بناها وأطلقها {name}.",
+    "platformsLabel": "المنصات",
+    "statusLabel": "الحالة",
+    "platforms": {
+      "ios": "iOS",
+      "android": "Android",
+      "web": "ويب",
+      "desktop": "سطح المكتب"
+    },
+    "status": {
+      "live": "متاح",
+      "beta": "تجريبي",
+      "in-development": "قيد التطوير",
+      "archived": "مؤرشف"
+    },
+    "appStore": "App Store",
+    "googlePlay": "Google Play",
+    "openWebApp": "فتح تطبيق الويب",
+    "getTheApp": "احصل على التطبيق",
+    "screenshots": "لقطات الشاشة",
+    "details": "التفاصيل",
+    "stack": "التقنيات",
+    "back": "كل التطبيقات",
+    "viewApp": "عرض التطبيق",
+    "previous": "السابق",
+    "next": "التالي"
+  },
+  "notFound": {
+    "title": "الصفحة غير موجودة",
+    "text": "الصفحة التي تبحث عنها غير موجودة أو تم نقلها.",
+    "back": "العودة إلى الرئيسية"
+  }
+}

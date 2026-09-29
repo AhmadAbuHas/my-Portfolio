@@ -1,0 +1,20 @@
+company: ASAL Technologies
+role:
+  en: Software Engineer
+  ar: مهندس برمجيات
+employmentType: full-time
+location:
+  en: Rawabi
+  ar: روابي
+startDate: 2020-01-01
+endDate: 2021-04-01
+highlights: []
+tech:
+  - C#
+  - ASP.NET MVC
+  - LINQ
+  - jQuery
+  - Bootstrap
+  - JavaScript
+  - HTML
+  - CSS

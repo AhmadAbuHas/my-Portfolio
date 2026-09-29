@@ -1,0 +1,19 @@
+seoTitle:
+  en: Ahmad Abu Hasan — Senior Full-Stack Engineer
+  ar: أحمد أبو حسن — مهندس برمجيات Full-Stack أول
+seoDescription:
+  en: Senior Full-Stack Engineer building fast, reliable web and mobile products with React, React Native, Node.js and NestJS.
+  ar: مهندس برمجيات Full-Stack أول يبني منتجات ويب وموبايل سريعة وموثوقة باستخدام React وReact Native وNode.js وNestJS.
+contactHeading:
+  en: Let's build something great.
+  ar: لنبنِ شيئاً رائعاً معاً.
+contactText:
+  en: Have a role or a project in mind? Email is the fastest way to reach me.
+  ar: لديك فرصة عمل أو فكرة مشروع؟ البريد الإلكتروني هو أسرع طريقة للتواصل معي.
+sections:
+  projects: true
+  apps: true
+  experience: true
+  skills: true
+  about: true
+  contact: true
