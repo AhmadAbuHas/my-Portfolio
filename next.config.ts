@@ -17,6 +17,12 @@ const nextConfig: NextConfig = {
     // removes the render-blocking request, which matters most on slow mobile.
     inlineCss: true,
   },
+  // The Keystatic reader loads /content from disk. Static pages read it at
+  // build time, but routes rendered on demand (e.g. the 404 page) read it at
+  // request time, so the files must ship with every server function.
+  outputFileTracingIncludes: {
+    "/**": ["./content/**/*"],
+  },
   turbopack: {
     resolveAlias: {
       "next-intl/config": "./src/i18n/request.ts",
