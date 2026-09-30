@@ -42,11 +42,13 @@ function hasContent(node: Node): boolean {
 }
 
 function richText(
-  byLocale: Record<Locale, { node: Node }>,
+  byLocale: Record<Locale, { node: Node } | undefined>,
   locale: Locale,
 ): RichContent | null {
-  if (hasContent(byLocale[locale].node)) return { node: byLocale[locale].node, lang: locale };
-  if (locale !== "en" && hasContent(byLocale.en.node)) return { node: byLocale.en.node, lang: "en" };
+  const own = byLocale[locale]?.node;
+  if (own && hasContent(own)) return { node: own, lang: locale };
+  const english = byLocale.en?.node;
+  if (locale !== "en" && english && hasContent(english)) return { node: english, lang: "en" };
   return null;
 }
 
@@ -70,6 +72,7 @@ export type Profile = {
   portrait: ImageAsset | null;
   bio: RichContent | null;
   email: string;
+  otherEmails: string[];
   phone: string | null;
   socials: { platform: SocialPlatform; url: string }[];
   resumeUrl: string | null;
@@ -80,6 +83,7 @@ export type Profile = {
     endYear: number | null;
   }[];
   softSkills: string[];
+  languages: { name: string; level: string }[];
 };
 
 export const getProfile = cache(async (locale: Locale): Promise<Profile> => {
@@ -96,6 +100,7 @@ export const getProfile = cache(async (locale: Locale): Promise<Profile> => {
     portrait: optionalImage(p.portrait as OptionalImageValue, locale),
     bio: richText({ en: p.bioEn, ar: p.bioAr }, locale),
     email: p.email,
+    otherEmails: p.otherEmails.map((email) => email.trim()).filter(Boolean),
     phone: p.showPhone && p.phone.trim() ? p.phone.trim() : null,
     socials: p.socials.map((s) => ({ platform: s.platform, url: s.url })),
     resumeUrl: (locale === "ar" ? p.resumeAr : null) ?? p.resumeEn ?? null,
@@ -106,6 +111,7 @@ export const getProfile = cache(async (locale: Locale): Promise<Profile> => {
       endYear: e.endYear,
     })),
     softSkills: p.softSkills.map((s) => text(s, locale)),
+    languages: p.languages.map((l) => ({ name: text(l.name, locale), level: text(l.level, locale) })),
   };
 });
 
@@ -161,6 +167,7 @@ export type ExperienceItem = {
   role: string;
   employmentType: EmploymentType;
   location: string;
+  companyIntro: string;
   startDate: string;
   endDate: string | null;
   isCurrent: boolean;
@@ -179,6 +186,7 @@ export const getExperience = cache(async (locale: Locale): Promise<ExperienceIte
       role: text(entry.role, locale),
       employmentType: entry.employmentType,
       location: text(entry.location, locale),
+      companyIntro: text(entry.companyIntro, locale),
       startDate: entry.startDate,
       endDate: entry.endDate,
       isCurrent: entry.endDate === null,

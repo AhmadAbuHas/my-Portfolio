@@ -1,0 +1,17 @@
+title: Suhail Web Platform & Backoffice
+titleAr: منصة سهيل ولوحة التحكم الإدارية
+summary:
+  en: Real estate analytics platform and back office, with interactive Mapbox GL maps for exploring property data.
+  ar: منصة تحليلات عقارية مع لوحة تحكم إدارية، وخرائط تفاعلية بتقنية Mapbox GL لاستكشاف بيانات العقارات.
+cover:
+  discriminant: false
+role:
+  en: Front-end developer
+  ar: مطوّر واجهات أمامية
+client: ''
+tech:
+  - React
+  - Mapbox GL
+featured: false
+order: 6
+gallery: []

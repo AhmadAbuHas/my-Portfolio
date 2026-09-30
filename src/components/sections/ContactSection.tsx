@@ -50,13 +50,17 @@ export async function ContactSection({
           <p className="mt-6 max-w-[55ch] text-body text-pretty text-fg-muted">{text}</p>
 
           <div className="mt-10 flex flex-wrap items-center gap-3">
-            <CopyEmailButton
-              email={profile.email}
-              labels={{
-                copy: t("sections.contact.copyEmail"),
-                copied: t("sections.contact.copied"),
-              }}
-            />
+            {[profile.email, ...profile.otherEmails].map((email, index) => (
+              <CopyEmailButton
+                key={email}
+                email={email}
+                variant={index === 0 ? "primary" : "outline"}
+                labels={{
+                  copy: t("sections.contact.copyEmail"),
+                  copied: t("sections.contact.copied"),
+                }}
+              />
+            ))}
             <ButtonLink href={`mailto:${profile.email}`} variant="outline">
               <Mail aria-hidden="true" className="size-4" />
               {t("sections.contact.sendEmail")}

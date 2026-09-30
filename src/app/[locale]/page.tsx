@@ -7,7 +7,7 @@ import { ExperienceSection } from "@/components/sections/ExperienceSection";
 import { Hero } from "@/components/sections/Hero";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { SkillsSection } from "@/components/sections/SkillsSection";
-import type { Locale } from "@/i18n/routing";
+import { getLocaleParam } from "@/i18n/locale";
 import {
   getApps,
   getExperience,
@@ -22,15 +22,15 @@ import {
 import { pageMetadata } from "@/lib/metadata";
 import { getSiteUrl, localizedPath } from "@/lib/site";
 
-type Props = { params: Promise<{ locale: Locale }> };
+type Props = { params: Promise<{ locale: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale } = await params;
+  const locale = await getLocaleParam(params);
   return pageMetadata({ locale });
 }
 
 export default async function HomePage({ params }: Props) {
-  const { locale } = await params;
+  const locale = await getLocaleParam(params);
   setRequestLocale(locale);
 
   const [t, profile, settings, sections, experience, skills, projects, apps] = await Promise.all([
@@ -74,7 +74,8 @@ export default async function HomePage({ params }: Props) {
     ...(current ? { worksFor: { "@type": "Organization", name: current.company } } : {}),
     alumniOf: profile.education.map((item) => ({ "@type": "CollegeOrUniversity", name: item.school })),
     knowsAbout: skills.flatMap((group) => group.items),
-    sameAs: profile.socials.map((social) => social.url),
+    // Profile pages only; a WhatsApp chat link isn't a profile.
+    sameAs: profile.socials.filter((social) => social.platform !== "whatsapp").map((social) => social.url),
   };
 
   return (

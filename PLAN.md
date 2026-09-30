@@ -362,11 +362,11 @@ Cleaned from the PDF: typos fixed and tech names normalized. The Arabic drafts a
 
 | Group (EN / AR) | Emphasis | Items |
 |---|---|---|
-| Frontend / الواجهات الأمامية | primary | React, TypeScript, JavaScript, HTML5, CSS3, MUI, Ant Design, JSS, Mapbox |
-| Mobile / تطبيقات الموبايل | primary | React Native |
+| Frontend / الواجهات الأمامية | primary | React, TypeScript, JavaScript, HTML5, CSS3, Tailwind CSS, MUI, Ant Design, JSS, Mapbox |
+| Mobile / تطبيقات الموبايل | primary | React Native, Flutter |
 | Backend / الخوادم | primary | Node.js, NestJS, REST APIs, GraphQL, Apollo, Prisma |
 | Databases / قواعد البيانات | primary | PostgreSQL, MySQL, SQL |
-| AI / الذكاء الاصطناعي | primary | AI agents, AI engineering |
+| AI / الذكاء الاصطناعي | primary | AI agents, Agent building, AI engineering |
 | Cloud / الحوسبة السحابية | primary | DigitalOcean, AWS |
 | Earlier experience / خبرات سابقة | secondary | C#, ASP.NET MVC, LINQ, jQuery, Bootstrap, Magento, OpenCart, Fabric XM |
 
@@ -376,7 +376,7 @@ Soft skills (shown in About): self-learning, communication.
 
 | # | Company | Role | Dates | Location | Tech |
 |---|---|---|---|---|---|
-| 1 | **TipTip** | Senior Full-Stack Engineer | Nov 2025 – Present | Dubai, UAE | React, React Native, Node.js, NestJS, Prisma, PostgreSQL, SQL, DigitalOcean, AI agents |
+| 1 | **TipTip** | Senior Full-Stack Engineer | Nov 2025 – Present | Dubai, UAE | React, React Native, Flutter, Node.js, NestJS, Prisma, PostgreSQL, SQL, DigitalOcean, AI agents |
 | 2 | **Quant** | Front-End Developer | Feb 2023 – Dec 2025 | — | TypeScript, JavaScript, React, MUI, Ant Design, JSS, Axios, REST APIs, Mapbox, HTML5, CSS3 |
 | 3 | **I3Hub** | Front-End Developer | Sep 2021 – Feb 2023 | Ramallah | React, TypeScript, MUI, JSS, GraphQL, Apollo, HTML5, CSS3 |
 | 4 | **ITG Software, Inc.** | Front-End Developer | Apr 2021 – Sep 2021 | Nablus | React, JavaScript, Magento, Fabric XM, OpenCart, REST APIs, Bootstrap 4, AWS, MySQL |
@@ -384,13 +384,16 @@ Soft skills (shown in About): self-learning, communication.
 | 6 | **Newsoft for ICT** | Front-End Intern | Oct 2019 – Jan 2020 | Ramallah | — |
 
 **Content gaps for Ahmad to fill in (via Keystatic):**
-- [ ] **2–3 impact bullets per role.** The PDF only lists tech, and "what you achieved" is what recruiters read. Use the form verb + what + measurable result, e.g. "Built a Mapbox-based dashboard used by X clients."
+- [x] Impact bullets and company intros for Quant, I3Hub, ITG and ASAL (from the CV, 2026-09-30).
+- [ ] **Impact bullets for TipTip** (the CV's current role is AUI, which Ahmad chose not to show).
 - [ ] Confirm "DO" = **DigitalOcean** at TipTip.
-- [ ] Quant's location (remote?).
+- [ ] Quant's location (the CV says Riyadh; LinkedIn details were kept).
 - [ ] Company logos (optional).
-- [ ] Portrait photo and CV PDF (EN, and AR if available).
+- [x] Portrait photo (400×400; an 800×800+ version would look sharper on high-DPI screens).
+- [ ] CV PDF (EN, and AR if available).
 - [ ] GitHub URL and any other socials.
-- [ ] Projects and apps (to be added later through `/keystatic`).
+- [x] Projects from the CV: Suhail Web Platform, Suhail GPTV, Al-Souq, Healthcare Platforms, E-commerce. Covers, links and case studies still to add.
+- [ ] Apps (to be added through `/keystatic`).
 
 > Tip: the same typos exist on the LinkedIn profile itself ("Magnto", "RestfullAPI", "intership", "communication skil"). Fixing them there is worth it too.
 

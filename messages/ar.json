@@ -30,7 +30,7 @@
     "statsLabel": "لمحة سريعة",
     "yearsLabel": "{count, plural, one {سنة خبرة} two {سنتا خبرة} few {سنوات خبرة} many {سنة خبرة} other {سنة خبرة}}",
     "companiesLabel": "{count, plural, one {شركة} two {شركتان} few {شركات} many {شركة} other {شركة}}",
-    "focus": "ويب · موبايل · ذكاء اصطناعي",
+    "focus": "ويب · موبايل · خوادم · ذكاء اصطناعي",
     "focusLabel": "ما أبنيه"
   },
   "sections": {
@@ -59,7 +59,8 @@
       "title": "من أنا",
       "education": "التعليم",
       "strengths": "نقاط القوة",
-      "basedIn": "مقيم في"
+      "basedIn": "مقيم في",
+      "languages": "اللغات"
     },
     "contact": {
       "eyebrow": "تواصل",

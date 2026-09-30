@@ -5,15 +5,18 @@ import { useEffect, useRef, useState } from "react";
 import { buttonClasses } from "@/components/ui/Button";
 
 /**
- * Primary contact action: copies the email address and confirms with a toast
- * (announced to screen readers). Falls back to mailto: if the clipboard is blocked.
+ * Copies an email address and confirms with a toast (announced to screen
+ * readers). Falls back to mailto: if the clipboard is blocked. The main email
+ * uses the lime primary style; additional ones use the outline style.
  */
 export function CopyEmailButton({
   email,
   labels,
+  variant = "primary",
 }: {
   email: string;
   labels: { copy: string; copied: string };
+  variant?: "primary" | "outline";
 }) {
   const [copied, setCopied] = useState(false);
   const timer = useRef<number | undefined>(undefined);
@@ -33,7 +36,7 @@ export function CopyEmailButton({
 
   return (
     <>
-      <button type="button" onClick={handleCopy} className={buttonClasses({ className: "min-w-0" })}>
+      <button type="button" onClick={handleCopy} className={buttonClasses({ variant, className: "min-w-0" })}>
         <span className="sr-only">{labels.copy}: </span>
         <span dir="ltr" className="truncate font-mono">
           {email}

@@ -1,0 +1,18 @@
+title: Ease Souq
+titleAr: Ease Souq
+summary:
+  en: Accounting system and online store.
+  ar: نظام محاسبة ومتجر إلكتروني.
+cover:
+  discriminant: false
+role:
+  en: ''
+  ar: ''
+client: ''
+tech:
+  - React
+  - Node.js
+  - NestJS
+featured: true
+order: 2
+gallery: []

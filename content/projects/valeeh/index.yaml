@@ -1,0 +1,19 @@
+title: Valeeh
+titleAr: Valeeh
+summary:
+  en: Valet parking app.
+  ar: تطبيق لخدمة صف السيارات (الفاليه).
+cover:
+  discriminant: false
+role:
+  en: ''
+  ar: ''
+client: ''
+tech:
+  - React
+  - React Native
+  - Node.js
+  - NestJS
+featured: false
+order: 4
+gallery: []

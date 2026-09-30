@@ -162,7 +162,7 @@ export default config({
         portrait: optionalImage(
           "Portrait photo",
           "profile",
-          "A 4:5 portrait works best (at least 800×1000).",
+          "A square photo works best (at least 800×800).",
         ),
         bioEn: fields.markdoc({ label: "About · English", options: bioEditor }),
         bioAr: fields.markdoc({ label: "About · العربية", options: bioEditor }),
@@ -173,6 +173,20 @@ export default config({
             pattern: { regex: emailPattern, message: "Enter a valid email address." },
           },
         }),
+        otherEmails: fields.array(
+          fields.text({
+            label: "Email",
+            validation: {
+              isRequired: true,
+              pattern: { regex: emailPattern, message: "Enter a valid email address." },
+            },
+          }),
+          {
+            label: "Other emails",
+            description: "Shown in Contact after the main email.",
+            itemLabel: (props) => props.value || "Email",
+          },
+        ),
         phone: fields.text({
           label: "Phone",
           description:
@@ -230,6 +244,16 @@ export default config({
           label: "Soft skills",
           itemLabel: (props) => props.fields.en.value || "Soft skill",
         }),
+        languages: fields.array(
+          fields.object({
+            name: localizedText("Language"),
+            level: localizedText("Level", { description: "e.g. Native, Fluent." }),
+          }),
+          {
+            label: "Languages",
+            itemLabel: (props) => props.fields.name.fields.en.value || "Language",
+          },
+        ),
       },
     }),
 
@@ -338,6 +362,11 @@ export default config({
           defaultValue: "full-time",
         }),
         location: localizedText("Location", { required: false }),
+        companyIntro: localizedText("About the company", {
+          multiline: true,
+          required: false,
+          description: "One short line, e.g. “A data science company specializing in real estate analytics.”",
+        }),
         startDate: fields.date({
           label: "Start date",
           validation: { isRequired: true },

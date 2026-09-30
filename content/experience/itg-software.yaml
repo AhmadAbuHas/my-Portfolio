@@ -6,11 +6,19 @@ employmentType: full-time
 location:
   en: Nablus
   ar: نابلس
+companyIntro:
+  en: Builds e-commerce web applications for international clients.
+  ar: تبني تطبيقات ويب للتجارة الإلكترونية لعملاء دوليين.
 startDate: 2021-04-01
 endDate: 2021-09-01
-highlights: []
+highlights:
+  - en: Maintained and enhanced front-end systems for international clients.
+    ar: طوّرت وصنت أنظمة الواجهات الأمامية لعملاء دوليين.
+  - en: Developed reusable, responsive components using React and TypeScript.
+    ar: طوّرت مكونات متجاوبة قابلة لإعادة الاستخدام باستخدام React وTypeScript.
 tech:
   - React
+  - TypeScript
   - JavaScript
   - Magento
   - Fabric XM

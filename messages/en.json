@@ -30,7 +30,7 @@
     "statsLabel": "At a glance",
     "yearsLabel": "{count, plural, one {year of experience} other {years of experience}}",
     "companiesLabel": "{count, plural, one {company} other {companies}}",
-    "focus": "Web · Mobile · AI",
+    "focus": "Web · Mobile · Backend · AI",
     "focusLabel": "what I build"
   },
   "sections": {
@@ -59,7 +59,8 @@
       "title": "A bit about me",
       "education": "Education",
       "strengths": "Strengths",
-      "basedIn": "Based in"
+      "basedIn": "Based in",
+      "languages": "Languages"
     },
     "contact": {
       "eyebrow": "Contact",

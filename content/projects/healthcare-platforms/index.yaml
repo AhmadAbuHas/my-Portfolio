@@ -1,0 +1,17 @@
+title: Healthcare Platforms
+titleAr: منصات الرعاية الصحية
+summary:
+  en: Seha City, Wasfty+ and Sehatuk, a family of healthcare platforms.
+  ar: Seha City وWasfty+ وSehatuk، مجموعة من منصات الرعاية الصحية.
+cover:
+  discriminant: false
+role:
+  en: Front-end developer
+  ar: مطوّر واجهات أمامية
+client: ''
+tech:
+  - React
+  - GraphQL
+featured: false
+order: 9
+gallery: []

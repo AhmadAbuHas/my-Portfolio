@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Check, GraduationCap, MapPin } from "lucide-react";
+import { Check, GraduationCap, Languages, MapPin } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { Reveal } from "@/components/motion/Reveal";
 import { Container } from "@/components/ui/Container";
@@ -15,7 +15,7 @@ function Portrait({ profile }: { profile: Profile }) {
         aria-hidden="true"
         className="absolute inset-0 translate-x-3 translate-y-3 rounded-xl border-2 border-accent rtl:-translate-x-3"
       />
-      <div className="relative aspect-[4/5] overflow-hidden rounded-xl border border-border bg-surface">
+      <div className="relative aspect-square overflow-hidden rounded-xl border border-border bg-surface">
         {profile.portrait ? (
           <Image
             src={profile.portrait.src}
@@ -83,12 +83,30 @@ export async function AboutSection({ number, profile }: { number: string; profil
               ) : null}
             </div>
 
-            {profile.location ? (
-              <p className="mt-8 inline-flex items-center gap-2 text-fg-muted">
-                <MapPin aria-hidden="true" className="size-4 text-accent" />
-                {t("basedIn")} <span className="text-fg">{profile.location}</span>
-              </p>
-            ) : null}
+            <div className="mt-8 flex flex-col gap-3 text-fg-muted">
+              {profile.location ? (
+                <p className="inline-flex items-center gap-2">
+                  <MapPin aria-hidden="true" className="size-4 shrink-0 text-accent" />
+                  {t("basedIn")} <span className="text-fg">{profile.location}</span>
+                </p>
+              ) : null}
+              {profile.languages.length > 0 ? (
+                <p className="inline-flex flex-wrap items-center gap-x-2 gap-y-1">
+                  <Languages aria-hidden="true" className="size-4 shrink-0 text-accent" />
+                  <span className="sr-only">{t("languages")}: </span>
+                  {profile.languages.map((language, index) => (
+                    <span key={language.name}>
+                      {index > 0 ? (
+                        <span aria-hidden="true" className="me-2 text-fg-subtle">
+                          ·
+                        </span>
+                      ) : null}
+                      <span className="text-fg">{language.name}</span> ({language.level})
+                    </span>
+                  ))}
+                </p>
+              ) : null}
+            </div>
           </Reveal>
         </div>
       </Container>

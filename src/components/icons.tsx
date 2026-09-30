@@ -1,5 +1,16 @@
 import type { LucideIcon } from "lucide-react";
-import { Bot, BrainCircuit, Cloud, Database, Globe, Smartphone, Webhook } from "lucide-react";
+import {
+  Bot,
+  BrainCircuit,
+  Cloud,
+  Database,
+  Globe,
+  Map as MapIcon,
+  MessageSquareCode,
+  Smartphone,
+  Webhook,
+  Workflow,
+} from "lucide-react";
 import type { SimpleIcon } from "simple-icons";
 import {
   siAntdesign,
@@ -7,23 +18,31 @@ import {
   siApple,
   siAxios,
   siBootstrap,
+  siClaude,
   siCss,
+  siCursor,
   siDigitalocean,
   siDocker,
   siDotnet,
+  siDart,
   siDribbble,
   siExpo,
   siFigma,
   siFirebase,
+  siFlutter,
   siGit,
   siGithub,
+  siGithubactions,
   siGoogleplay,
   siGraphql,
   siHtml5,
   siJavascript,
+  siJest,
   siJquery,
   siJss,
+  siLeaflet,
   siMapbox,
+  siModelcontextprotocol,
   siMongodb,
   siMui,
   siMysql,
@@ -33,16 +52,21 @@ import {
   siPostgresql,
   siPrisma,
   siReact,
+  siReactquery,
   siRedis,
   siRedux,
   siSass,
   siSqlite,
   siStorybook,
+  siStyledcomponents,
   siSupabase,
   siTailwindcss,
+  siTestinglibrary,
   siTypescript,
   siVercel,
   siVite,
+  siVitest,
+  siWebpack,
   siWhatsapp,
   siX,
 } from "simple-icons";
@@ -94,6 +118,25 @@ const brandIcons: Record<string, SimpleIcon> = {
   antd: siAntdesign,
   jss: siJss,
   mapbox: siMapbox,
+  mapboxgl: siMapbox,
+  mapboxgljs: siMapbox,
+  leaflet: siLeaflet,
+  reactquery: siReactquery,
+  tanstackquery: siReactquery,
+  reduxtoolkit: siRedux,
+  styledcomponents: siStyledcomponents,
+  testinglibrary: siTestinglibrary,
+  reacttestinglibrary: siTestinglibrary,
+  githubactions: siGithubactions,
+  claudecode: siClaude,
+  claude: siClaude,
+  cursor: siCursor,
+  mcp: siModelcontextprotocol,
+  modelcontextprotocol: siModelcontextprotocol,
+  modelcontextprotocolmcp: siModelcontextprotocol,
+  jest: siJest,
+  vitest: siVitest,
+  webpack: siWebpack,
   node: siNodedotjs,
   nodejs: siNodedotjs,
   nestjs: siNestjs,
@@ -124,6 +167,8 @@ const brandIcons: Record<string, SimpleIcon> = {
   tailwindcss: siTailwindcss,
   redux: siRedux,
   expo: siExpo,
+  flutter: siFlutter,
+  dart: siDart,
   docker: siDocker,
   git: siGit,
   github: siGithub,
@@ -151,11 +196,20 @@ const conceptIcons: Record<string, LucideIcon> = {
   restfulapis: Webhook,
   responsiveweb: Smartphone,
   aws: Cloud,
+  geojson: MapIcon,
+  agenticworkflows: Workflow,
+  promptengineering: MessageSquareCode,
 };
 
 export function hasTechIcon(name: string) {
   const key = normalize(name);
   return key in brandIcons || key in conceptIcons;
+}
+
+/** The logo a name resolves to, or null. React and React Native resolve to the same logo. */
+export function resolveTechIcon(name: string): SimpleIcon | LucideIcon | null {
+  const key = normalize(name);
+  return brandIcons[key] ?? conceptIcons[key] ?? null;
 }
 
 /** Logo for a technology name, or a neutral marker when none is known. */

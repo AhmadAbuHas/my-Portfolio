@@ -6,9 +6,20 @@ employmentType: full-time
 location:
   en: ''
   ar: ''
+companyIntro:
+  en: A data science company specializing in real estate analytics and e-commerce platforms.
+  ar: شركة متخصصة في علم البيانات وتحليلات العقارات ومنصات التجارة الإلكترونية.
 startDate: 2023-02-01
 endDate: 2025-12-01
-highlights: []
+highlights:
+  - en: Led front-end development for analytics dashboards and mapping tools using React, TypeScript and Mapbox GL.
+    ar: قدت تطوير الواجهات الأمامية للوحات التحليلات وأدوات الخرائط باستخدام React وTypeScript وMapbox GL.
+  - en: Improved application loading time by 35% through code splitting and performance optimization.
+    ar: حسّنت زمن تحميل التطبيق بنسبة 35% عبر تقسيم الشيفرة وتحسين الأداء.
+  - en: Developed reusable UI components with MUI and Ant Design, reducing development time by 40%.
+    ar: طوّرت مكونات واجهة قابلة لإعادة الاستخدام باستخدام MUI وAnt Design، ما قلّل وقت التطوير بنسبة 40%.
+  - en: Built parcel layers, price tags, clustering and performant map rendering for large datasets.
+    ar: بنيت طبقات قطع الأراضي وملصقات الأسعار وتجميع العلامات، مع عرض عالي الأداء للخرائط لمجموعات بيانات ضخمة.
 tech:
   - TypeScript
   - JavaScript

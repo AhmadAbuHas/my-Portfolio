@@ -6,11 +6,11 @@ import { AppBadges, AppIcon, StoreLinks } from "@/components/work/AppParts";
 import { DetailBody } from "@/components/work/DetailBody";
 import { Gallery } from "@/components/work/Gallery";
 import { PageIntro } from "@/components/work/PageIntro";
-import type { Locale } from "@/i18n/routing";
+import { getLocaleParam } from "@/i18n/locale";
 import { getApp, getAppSlugs } from "@/lib/content";
 import { pageMetadata } from "@/lib/metadata";
 
-type Props = { params: Promise<{ locale: Locale; slug: string }> };
+type Props = { params: Promise<{ locale: string; slug: string }> };
 
 export const dynamicParams = false;
 
@@ -20,7 +20,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale, slug } = await params;
+  const { slug } = await params;
+  const locale = await getLocaleParam(params);
   const app = await getApp(slug, locale);
   if (!app) return {};
   return pageMetadata({
@@ -32,7 +33,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function AppPage({ params }: Props) {
-  const { locale, slug } = await params;
+  const { slug } = await params;
+  const locale = await getLocaleParam(params);
   setRequestLocale(locale);
 
   const [t, app] = await Promise.all([getTranslations("apps"), getApp(slug, locale)]);

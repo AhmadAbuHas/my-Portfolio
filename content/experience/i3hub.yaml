@@ -6,9 +6,18 @@ employmentType: full-time
 location:
   en: Ramallah
   ar: رام الله
+companyIntro:
+  en: A healthcare startup building an e-prescription system.
+  ar: شركة ناشئة في مجال الرعاية الصحية تبني نظاماً للوصفات الطبية الإلكترونية.
 startDate: 2021-09-01
 endDate: 2023-02-01
-highlights: []
+highlights:
+  - en: Built and maintained front-end modules using React, TypeScript and GraphQL.
+    ar: بنيت وطوّرت وحدات الواجهة الأمامية باستخدام React وTypeScript وGraphQL.
+  - en: Implemented fully responsive, mobile-first interfaces with 100% design accuracy.
+    ar: نفّذت واجهات متجاوبة بالكامل تبدأ بالموبايل، مطابقة للتصميم بنسبة 100%.
+  - en: Optimized performance across mobile and tablet devices.
+    ar: حسّنت الأداء على أجهزة الموبايل والأجهزة اللوحية.
 tech:
   - React
   - TypeScript

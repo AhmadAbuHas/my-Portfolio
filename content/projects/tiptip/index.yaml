@@ -1,0 +1,19 @@
+title: TipTip
+titleAr: TipTip
+summary:
+  en: Fintech platform for digital tipping.
+  ar: منصة تقنية مالية للإكراميات الرقمية.
+cover:
+  discriminant: false
+role:
+  en: Senior full-stack engineer
+  ar: مهندس برمجيات متكامل خبير
+client: ''
+tech:
+  - React
+  - Flutter
+  - Node.js
+  - NestJS
+featured: true
+order: 3
+gallery: []

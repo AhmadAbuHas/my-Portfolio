@@ -89,7 +89,7 @@ export async function Hero({
         </p>
 
         <p
-          className="fade-rise mt-6 max-w-[60ch] text-body text-pretty text-fg-muted"
+          className="fade-rise mt-6 max-w-[60ch] text-body text-balance text-fg-muted"
           style={cssVars({ "--i": 4 })}
         >
           {profile.valueProp}
@@ -112,7 +112,7 @@ export async function Hero({
 
         <dl
           aria-label={t("statsLabel")}
-          className="fade-rise mt-16 grid max-w-3xl grid-cols-2 gap-x-8 gap-y-8 border-t border-border pt-8 sm:grid-cols-3"
+          className="fade-rise mt-16 grid max-w-4xl grid-cols-2 gap-x-8 gap-y-8 border-t border-border pt-8 sm:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(0,1.8fr)]"
           style={cssVars({ "--i": 6 })}
         >
           {profile.yearsOfExperience > 0 ? (

@@ -1,0 +1,18 @@
+title: Suhail GPTV
+titleAr: سهيل GPTV
+summary:
+  en: AI-powered real estate insight viewer.
+  ar: أداة لعرض الرؤى العقارية مدعومة بالذكاء الاصطناعي.
+cover:
+  discriminant: false
+role:
+  en: Front-end developer
+  ar: مطوّر واجهات أمامية
+client: ''
+tech:
+  - React
+  - MUI
+  - AI
+featured: false
+order: 7
+gallery: []

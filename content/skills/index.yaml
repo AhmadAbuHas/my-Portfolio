@@ -5,23 +5,34 @@ groups:
     emphasis: primary
     items:
       - React
+      - Next.js
       - TypeScript
       - JavaScript
+      - Redux Toolkit
+      - React Query
       - HTML5
       - CSS3
+  - name:
+      en: UI & styling
+      ar: واجهات المستخدم والتنسيق
+    emphasis: primary
+    items:
+      - Tailwind CSS
       - MUI
       - Ant Design
+      - Styled Components
+      - Bootstrap
       - JSS
-      - Mapbox
   - name:
       en: Mobile
       ar: تطبيقات الموبايل
     emphasis: primary
     items:
       - React Native
+      - Flutter
   - name:
-      en: Backend
-      ar: الخوادم
+      en: Backend & APIs
+      ar: الخوادم وواجهات البرمجة
     emphasis: primary
     items:
       - Node.js
@@ -29,6 +40,7 @@ groups:
       - REST APIs
       - GraphQL
       - Apollo
+      - Axios
       - Prisma
   - name:
       en: Databases
@@ -44,12 +56,38 @@ groups:
     emphasis: primary
     items:
       - AI agents
+      - Agent building
       - AI engineering
+      - Model Context Protocol (MCP)
+      - Agentic workflows
+      - Prompt engineering
+      - Claude Code
+      - Cursor
   - name:
-      en: Cloud
-      ar: الحوسبة السحابية
+      en: Maps & geospatial
+      ar: الخرائط والبيانات الجغرافية
     emphasis: primary
     items:
+      - Mapbox GL
+      - Leaflet
+      - GeoJSON
+  - name:
+      en: Testing
+      ar: الاختبارات
+    emphasis: primary
+    items:
+      - Jest
+      - React Testing Library
+      - Vitest
+  - name:
+      en: Tools & cloud
+      ar: الأدوات والحوسبة السحابية
+    emphasis: primary
+    items:
+      - Git
+      - GitHub Actions
+      - Webpack
+      - Vite
       - DigitalOcean
       - AWS
   - name:
@@ -61,7 +99,6 @@ groups:
       - ASP.NET MVC
       - LINQ
       - jQuery
-      - Bootstrap
       - Magento
       - OpenCart
       - Fabric XM

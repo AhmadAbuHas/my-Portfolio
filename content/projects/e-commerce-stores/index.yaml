@@ -1,0 +1,18 @@
+title: 'E-commerce: Costco Printing & Bark Eats'
+titleAr: 'متاجر إلكترونية: Costco Printing وBark Eats'
+summary:
+  en: Online stores for Costco Printing and Bark Eats.
+  ar: متاجر إلكترونية لـ Costco Printing وBark Eats.
+cover:
+  discriminant: false
+role:
+  en: Front-end developer
+  ar: مطوّر واجهات أمامية
+client: ''
+tech:
+  - React
+  - TypeScript
+  - SCSS
+featured: false
+order: 10
+gallery: []

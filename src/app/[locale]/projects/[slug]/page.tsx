@@ -8,12 +8,12 @@ import { Container } from "@/components/ui/Container";
 import { DetailBody } from "@/components/work/DetailBody";
 import { Gallery } from "@/components/work/Gallery";
 import { PageIntro } from "@/components/work/PageIntro";
-import type { Locale } from "@/i18n/routing";
+import { getLocaleParam } from "@/i18n/locale";
 import { getProject, getProjectSlugs } from "@/lib/content";
 import { formatMonthYear } from "@/lib/dates";
 import { pageMetadata } from "@/lib/metadata";
 
-type Props = { params: Promise<{ locale: Locale; slug: string }> };
+type Props = { params: Promise<{ locale: string; slug: string }> };
 
 export const dynamicParams = false;
 
@@ -23,7 +23,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale, slug } = await params;
+  const { slug } = await params;
+  const locale = await getLocaleParam(params);
   const project = await getProject(slug, locale);
   if (!project) return {};
   return pageMetadata({
@@ -36,7 +37,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function ProjectPage({ params }: Props) {
-  const { locale, slug } = await params;
+  const { slug } = await params;
+  const locale = await getLocaleParam(params);
   setRequestLocale(locale);
 
   const [t, project] = await Promise.all([getTranslations(), getProject(slug, locale)]);

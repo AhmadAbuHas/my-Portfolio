@@ -98,6 +98,10 @@ function Entry({ item, locale, t }: { item: ExperienceItem; locale: Locale; t: T
             ) : null}
           </p>
 
+          {item.companyIntro ? (
+            <p className="mt-2 max-w-[65ch] text-small text-pretty text-fg-subtle">{item.companyIntro}</p>
+          ) : null}
+
           {item.highlights.length > 0 ? (
             <ul className="mt-5 space-y-2.5 text-fg-muted">
               {item.highlights.map((highlight) => (

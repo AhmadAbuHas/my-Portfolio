@@ -1,0 +1,16 @@
+title: Urban Fleet
+titleAr: Urban Fleet
+summary:
+  en: Vehicle handover app for taxi fleets.
+  ar: تطبيق لتسليم واستلام المركبات في أساطيل سيارات الأجرة.
+cover:
+  discriminant: false
+role:
+  en: ''
+  ar: ''
+client: ''
+tech:
+  - React Native
+featured: false
+order: 5
+gallery: []

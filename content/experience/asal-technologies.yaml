@@ -8,7 +8,11 @@ location:
   ar: روابي
 startDate: 2020-01-01
 endDate: 2021-04-01
-highlights: []
+highlights:
+  - en: Worked on established systems using ASP.NET MVC, JavaScript, jQuery and Bootstrap.
+    ar: عملت على أنظمة قائمة باستخدام ASP.NET MVC وJavaScript وjQuery وBootstrap.
+  - en: Enhanced UI responsiveness and implemented feature improvements.
+    ar: حسّنت تجاوب الواجهات ونفّذت تحسينات على الميزات.
 tech:
   - C#
   - ASP.NET MVC

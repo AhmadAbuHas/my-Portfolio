@@ -1,0 +1,18 @@
+title: Douri App
+titleAr: Douri App
+summary:
+  en: Patient booking system for clinics.
+  ar: نظام لحجز مواعيد المرضى في العيادات.
+cover:
+  discriminant: false
+role:
+  en: ''
+  ar: ''
+client: ''
+tech:
+  - React
+  - Node.js
+  - NestJS
+featured: true
+order: 1
+gallery: []

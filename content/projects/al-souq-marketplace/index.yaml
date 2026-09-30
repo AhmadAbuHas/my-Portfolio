@@ -1,0 +1,17 @@
+title: Al-Souq Marketplace
+titleAr: منصة السوق العقارية
+summary:
+  en: Mobile-first property marketplace.
+  ar: سوق عقاري مصمم للموبايل أولاً.
+cover:
+  discriminant: false
+role:
+  en: Front-end developer
+  ar: مطوّر واجهات أمامية
+client: ''
+tech:
+  - React
+  - Styled Components
+featured: false
+order: 8
+gallery: []
