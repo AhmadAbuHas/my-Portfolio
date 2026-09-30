@@ -6,6 +6,9 @@ import type { NextConfig } from "next";
 // whose native binary refuses to load on machines where another Windows
 // account can write to the user's AppData folder.
 const nextConfig: NextConfig = {
+  // Keystatic's GitHub mode sends the browser to 127.0.0.1 in development
+  // (for the OAuth callback); let the dev server serve its assets there.
+  allowedDevOrigins: ["127.0.0.1"],
   images: {
     formats: ["image/avif", "image/webp"],
   },
