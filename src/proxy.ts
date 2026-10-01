@@ -21,6 +21,7 @@ export default function proxy(request: NextRequest) {
 }
 
 export const config = {
-  // Everything except Next internals and files with an extension.
-  matcher: ["/((?!_next|_vercel|.*\\..*).*)"],
+  // Everything except Next internals, generated icons (no file extension in
+  // their URL, e.g. /apple-icon) and files with an extension.
+  matcher: ["/((?!_next|_vercel|apple-icon|.*\\..*).*)"],
 };

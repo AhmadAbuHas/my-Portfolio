@@ -87,7 +87,7 @@
   },
   "projects": {
     "title": "المشاريع",
-    "description": "مشاريع مختارة من أعمال {name}.",
+    "description": "مشاريع ويب وموبايل وذكاء اصطناعي من تطوير {name}، {headline}.",
     "role": "دوري",
     "client": "العميل",
     "timeline": "المدة",
@@ -98,11 +98,12 @@
     "caseStudy": "دراسة الحالة",
     "gallery": "معرض الصور",
     "viewProject": "عرض المشروع",
-    "noCover": "لا توجد صورة غلاف"
+    "noCover": "لا توجد صورة غلاف",
+    "metaDescription": "{summary} من تطوير {name} باستخدام {list}."
   },
   "apps": {
     "title": "التطبيقات",
-    "description": "تطبيقات بناها وأطلقها {name}.",
+    "description": "تطبيقات ويب وموبايل بناها وأطلقها {name}، {headline}.",
     "platformsLabel": "المنصات",
     "statusLabel": "الحالة",
     "platforms": {
@@ -127,7 +128,8 @@
     "back": "كل التطبيقات",
     "viewApp": "عرض التطبيق",
     "previous": "السابق",
-    "next": "التالي"
+    "next": "التالي",
+    "metaDescription": "{summary} من تطوير {name} باستخدام {list}."
   },
   "notFound": {
     "title": "الصفحة غير موجودة",

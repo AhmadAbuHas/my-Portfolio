@@ -9,9 +9,11 @@ import { DetailBody } from "@/components/work/DetailBody";
 import { Gallery } from "@/components/work/Gallery";
 import { PageIntro } from "@/components/work/PageIntro";
 import { getLocaleParam } from "@/i18n/locale";
-import { getProject, getProjectSlugs } from "@/lib/content";
+import { getProfile, getProject, getProjectSlugs } from "@/lib/content";
 import { formatMonthYear } from "@/lib/dates";
 import { pageMetadata } from "@/lib/metadata";
+import { projectGraph, techList } from "@/lib/structured-data";
+import { JsonLd } from "@/components/JsonLd";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
 
@@ -25,13 +27,19 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const locale = await getLocaleParam(params);
-  const project = await getProject(slug, locale);
+  const [t, project, profile] = await Promise.all([
+    getTranslations({ locale, namespace: "projects" }),
+    getProject(slug, locale),
+    getProfile(locale),
+  ]);
   if (!project) return {};
   return pageMetadata({
     locale,
     path: `/projects/${slug}`,
     title: project.name,
-    description: project.summary,
+    description: project.tech.length
+      ? t("metaDescription", { summary: project.summary, name: profile.name, list: techList(locale, project.tech) })
+      : project.summary,
     image: project.cover?.src,
   });
 }
@@ -54,8 +62,14 @@ export default async function ProjectPage({ params }: Props) {
     { label: t("projects.timeline"), value: timeline },
   ].filter((fact) => fact.value);
 
+  const structuredData = await projectGraph(locale, project, {
+    home: t("common.home"),
+    projects: t("projects.title"),
+  });
+
   return (
     <article>
+      <JsonLd data={structuredData} />
       <PageIntro
         back={{ href: "/projects", label: t("projects.back") }}
         eyebrow={<p className="eyebrow">{t("sections.projects.eyebrow")}</p>}

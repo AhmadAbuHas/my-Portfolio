@@ -8,6 +8,8 @@ import { PageIntro } from "@/components/work/PageIntro";
 import { getLocaleParam } from "@/i18n/locale";
 import { getApps, getProfile } from "@/lib/content";
 import { pageMetadata } from "@/lib/metadata";
+import { collectionGraph } from "@/lib/structured-data";
+import { JsonLd } from "@/components/JsonLd";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -21,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     locale,
     path: "/apps",
     title: t("title"),
-    description: t("description", { name: profile.name }),
+    description: t("description", { name: profile.name, headline: profile.headline }),
   });
 }
 
@@ -32,8 +34,15 @@ export default async function AppsPage({ params }: Props) {
   const [t, apps] = await Promise.all([getTranslations(), getApps(locale)]);
   if (apps.length === 0) notFound();
 
+  const structuredData = await collectionGraph(
+    locale,
+    { name: t("apps.title"), path: "/apps", homeLabel: t("common.home") },
+    apps.map((app) => ({ name: app.name, path: `/apps/${app.slug}` })),
+  );
+
   return (
     <>
+      <JsonLd data={structuredData} />
       <PageIntro
         back={{ href: "/", label: t("common.home") }}
         eyebrow={<p className="eyebrow">{t("sections.apps.eyebrow")}</p>}

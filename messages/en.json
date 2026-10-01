@@ -87,7 +87,7 @@
   },
   "projects": {
     "title": "Projects",
-    "description": "Selected projects by {name}.",
+    "description": "Web, mobile and AI projects by {name}, {headline}.",
     "role": "Role",
     "client": "Client",
     "timeline": "Timeline",
@@ -98,11 +98,12 @@
     "caseStudy": "Case study",
     "gallery": "Gallery",
     "viewProject": "View project",
-    "noCover": "No cover image"
+    "noCover": "No cover image",
+    "metaDescription": "{summary} Built by {name} with {list}."
   },
   "apps": {
     "title": "Apps",
-    "description": "Apps built and shipped by {name}.",
+    "description": "Web and mobile apps built and shipped by {name}, {headline}.",
     "platformsLabel": "Platforms",
     "statusLabel": "Status",
     "platforms": {
@@ -127,7 +128,8 @@
     "back": "All apps",
     "viewApp": "View app",
     "previous": "Previous",
-    "next": "Next"
+    "next": "Next",
+    "metaDescription": "{summary} Built by {name} with {list}."
   },
   "notFound": {
     "title": "Page not found",

@@ -17,12 +17,14 @@ export async function pageMetadata({
   title,
   description,
   image,
+  keywords,
 }: {
   locale: Locale;
   path?: string;
   title?: string;
   description?: string;
   image?: string | null;
+  keywords?: string[];
 }): Promise<Metadata> {
   const [settings, profile] = await Promise.all([getSiteSettings(locale), getProfile(locale)]);
   const fullTitle = title ? `${title} · ${profile.name}` : settings.seoTitle;
@@ -33,6 +35,7 @@ export async function pageMetadata({
   return {
     ...(title ? { title } : {}),
     description: finalDescription,
+    ...(keywords?.length ? { keywords } : {}),
     alternates: alternatesFor(locale, path),
     openGraph: {
       type: "website",

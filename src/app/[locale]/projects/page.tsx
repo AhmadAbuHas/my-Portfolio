@@ -8,6 +8,8 @@ import { ProjectCard } from "@/components/work/ProjectCard";
 import { getLocaleParam } from "@/i18n/locale";
 import { getProfile, getProjects } from "@/lib/content";
 import { pageMetadata } from "@/lib/metadata";
+import { collectionGraph } from "@/lib/structured-data";
+import { JsonLd } from "@/components/JsonLd";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -21,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     locale,
     path: "/projects",
     title: t("title"),
-    description: t("description", { name: profile.name }),
+    description: t("description", { name: profile.name, headline: profile.headline }),
   });
 }
 
@@ -32,8 +34,15 @@ export default async function ProjectsPage({ params }: Props) {
   const [t, projects] = await Promise.all([getTranslations(), getProjects(locale)]);
   if (projects.length === 0) notFound();
 
+  const structuredData = await collectionGraph(
+    locale,
+    { name: t("projects.title"), path: "/projects", homeLabel: t("common.home") },
+    projects.map((project) => ({ name: project.name, path: `/projects/${project.slug}` })),
+  );
+
   return (
     <>
+      <JsonLd data={structuredData} />
       <PageIntro
         back={{ href: "/", label: t("common.home") }}
         eyebrow={<p className="eyebrow">{t("sections.projects.eyebrow")}</p>}

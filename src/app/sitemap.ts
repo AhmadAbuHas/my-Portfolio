@@ -13,9 +13,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...(appSlugs.length > 0 ? ["/apps", ...appSlugs.map((slug) => `/apps/${slug}`)] : []),
   ];
 
+  // Every content change triggers a rebuild, so the build time is the last update.
+  const lastModified = new Date();
+
   return paths.flatMap((path) =>
     routing.locales.map((locale) => ({
       url: `${base}${localizedPath(locale, path)}`,
+      lastModified,
       changeFrequency: "monthly" as const,
       priority: path === "" ? 1 : 0.7,
       alternates: {

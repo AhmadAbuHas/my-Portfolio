@@ -7,8 +7,10 @@ import { DetailBody } from "@/components/work/DetailBody";
 import { Gallery } from "@/components/work/Gallery";
 import { PageIntro } from "@/components/work/PageIntro";
 import { getLocaleParam } from "@/i18n/locale";
-import { getApp, getAppSlugs } from "@/lib/content";
+import { getApp, getAppSlugs, getProfile } from "@/lib/content";
 import { pageMetadata } from "@/lib/metadata";
+import { appGraph, techList } from "@/lib/structured-data";
+import { JsonLd } from "@/components/JsonLd";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
 
@@ -22,13 +24,19 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const locale = await getLocaleParam(params);
-  const app = await getApp(slug, locale);
+  const [t, app, profile] = await Promise.all([
+    getTranslations({ locale, namespace: "apps" }),
+    getApp(slug, locale),
+    getProfile(locale),
+  ]);
   if (!app) return {};
   return pageMetadata({
     locale,
     path: `/apps/${slug}`,
     title: app.name,
-    description: app.summary,
+    description: app.tech.length
+      ? t("metaDescription", { summary: app.summary, name: profile.name, list: techList(locale, app.tech) })
+      : app.summary,
   });
 }
 
@@ -37,11 +45,18 @@ export default async function AppPage({ params }: Props) {
   const locale = await getLocaleParam(params);
   setRequestLocale(locale);
 
-  const [t, app] = await Promise.all([getTranslations("apps"), getApp(slug, locale)]);
+  const [t, common, app] = await Promise.all([
+    getTranslations("apps"),
+    getTranslations("common"),
+    getApp(slug, locale),
+  ]);
   if (!app) notFound();
+
+  const structuredData = await appGraph(locale, app, { home: common("home"), apps: t("title") });
 
   return (
     <article>
+      <JsonLd data={structuredData} />
       <PageIntro
         back={{ href: "/apps", label: t("back") }}
         eyebrow={<AppIcon src={app.icon} name={app.name} className="size-20" />}

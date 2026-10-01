@@ -20,13 +20,27 @@ import {
   type SectionId,
 } from "@/lib/content";
 import { pageMetadata } from "@/lib/metadata";
-import { getSiteUrl, localizedPath } from "@/lib/site";
+import { homeGraph } from "@/lib/structured-data";
+import { JsonLd } from "@/components/JsonLd";
 
 type Props = { params: Promise<{ locale: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const locale = await getLocaleParam(params);
-  return pageMetadata({ locale });
+  const [profile, otherProfile, skills] = await Promise.all([
+    getProfile(locale),
+    getProfile(locale === "en" ? "ar" : "en"),
+    getSkills(locale),
+  ]);
+  return pageMetadata({
+    locale,
+    keywords: [
+      profile.name,
+      otherProfile.name,
+      profile.headline,
+      ...skills.filter((group) => group.emphasis === "primary").flatMap((group) => group.items).slice(0, 15),
+    ],
+  });
 }
 
 export default async function HomePage({ params }: Props) {
@@ -59,31 +73,9 @@ export default async function HomePage({ params }: Props) {
     ? { href: profile.resumeUrl, label: t("downloadCv"), download: true }
     : { href: "#contact", label: t("getInTouch") };
 
-  const current = experience.find((item) => item.isCurrent);
-  const personJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    name: profile.name,
-    jobTitle: profile.headline,
-    description: profile.valueProp,
-    url: `${getSiteUrl()}${localizedPath(locale)}`,
-    email: `mailto:${profile.email}`,
-    ...(profile.location
-      ? { address: { "@type": "PostalAddress", addressLocality: profile.location } }
-      : {}),
-    ...(current ? { worksFor: { "@type": "Organization", name: current.company } } : {}),
-    alumniOf: profile.education.map((item) => ({ "@type": "CollegeOrUniversity", name: item.school })),
-    knowsAbout: skills.flatMap((group) => group.items),
-    // Profile pages only; a WhatsApp chat link isn't a profile.
-    sameAs: profile.socials.filter((social) => social.platform !== "whatsapp").map((social) => social.url),
-  };
-
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd).replace(/</g, "\\u003c") }}
-      />
+      <JsonLd data={await homeGraph(locale)} />
       <Hero
         profile={profile}
         companies={companies}
