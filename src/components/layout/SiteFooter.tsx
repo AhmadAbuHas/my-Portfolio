@@ -12,7 +12,7 @@ export async function SiteFooter({ locale, name }: { locale: Locale; name: strin
     <footer className="border-t border-border">
       <Container className="flex flex-col gap-4 py-10 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-small text-fg-subtle">
-          © <span className="numeric">{year}</span> {name}. {t("builtWith")}
+          © <span className="numeric">{year}</span> {name}
         </p>
         <div className="flex flex-wrap items-center gap-2 -ms-3">
           <LanguageSwitch locale={locale} />
